@@ -4,5 +4,6 @@ let uniswapControllers = require('../controllers/uniswap')
 
 router.get('/fetchETHPrice', uniswapControllers.getETHPrice)
 router.get('/getLiquidityForTopTenTokens', uniswapControllers.getLiquidityForTopTenTokens)
+router.get('/getTokenVolume', uniswapControllers.getTokenVolume)
 
 module.exports = router
