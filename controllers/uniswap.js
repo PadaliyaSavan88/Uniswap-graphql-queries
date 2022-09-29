@@ -16,7 +16,8 @@ exports.getLiquidityForTopTenTokens = async function(request_data, response_data
 }
 
 exports.getTokenVolume = async function(request_data, response_data) {
-    const response = await graph.callGraphQLQuery(getTokenData.query)
+    console.log(request_data.body.tokenId)
+    const response = await graph.callGraphQLQueryWithParams(getTokenData.query, request_data.body.tokenId)
     return response_data.json({
         response
     })

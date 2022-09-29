@@ -8,7 +8,6 @@ require('./queries')
 uniswapURL = process.env.UNISWAP_GRAPHQL_QUERY ; // https://thegraph.com/explorer/subgraph/uniswap/uniswap-v2
 exports.callGraphQLQuery = async (query) =>{
     try {
-        let tokenId = '0x2f34f846f57e5e31975fa29ffcceb4d84a441abb'
         const result = await axios.post(
             uniswapURL,
             {
@@ -27,21 +26,23 @@ exports.callGraphQLQuery = async (query) =>{
 
 }
 
-exports.callGraphQLQueryWithParams = async (query) => {
+exports.callGraphQLQueryWithParams = async (query, tokenId) => {
     try {
-        let tokenId = '0x2f34f846f57e5e31975fa29ffcceb4d84a441abb'
+        query = `{
+            tokens(where: {id: ${ '"' + tokenId + '"'}}) {
+                id
+                name
+                symbol
+                totalLiquidity
+                totalSupply
+                tradeVolume
+            }
+        }`
+        console.log(query)
         const result = await axios.post(
             uniswapURL,
             {
-                query: `{
-                    tokens(where: {id: ${tokenId}}) {
-                      id
-                      name
-                      symbol
-                      totalLiquidity
-                      totalSupply
-                    }
-                  }`
+                query
             }
         );  
 

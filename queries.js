@@ -1,17 +1,19 @@
 exports = LiquidityForTopTenTokens = {
     query: `{
-        tokens(first: 10, orderBy:tradeVolumeUSD, orderDirection: desc)
-         {
-         symbol
-         name
-         totalLiquidity     
-           }
+        tokens(first: 10, orderBy:tradeVolumeUSD, orderDirection: desc){
+          id
+          symbol
+          name
+          totalLiquidity   
+          totalSupply  
+          tradeVolumeUSD
+        }
        }`
 }
 exports = ETHPrice = {
     query: `{
         bundles {
-            ethPrice
+          ethPrice
         }
       }`
 }
@@ -24,6 +26,7 @@ exports = getTokenData ={
           symbol
           totalLiquidity
           totalSupply
+          tradeVolume
         }
       }`
 }

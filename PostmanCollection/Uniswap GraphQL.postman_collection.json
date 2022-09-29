@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "43a86d40-a6aa-40c8-a5f3-8a101052901b",
+		"name": "Uniswap GraphQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FetchETHPrice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/fetchETHPrice",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"fetchETHPrice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLiquididtyOfTopTenTokens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/getLiquidityForTopTenTokens",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"getLiquidityForTopTenTokens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTokenVolume",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"tokenId\": \"0x2f34f846f57e5e31975fa29ffcceb4d84a441abb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/getTokenVolume",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"getTokenVolume"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
