@@ -22,3 +22,10 @@ exports.getTokenVolume = async function(request_data, response_data) {
         response
     })
 }
+
+exports.fetchPools = async function(request_data, response_data) {
+    const response = await graph.callGraphQLQuery(FetchPools.query)
+    return response_data.json({
+        response
+    })
+}

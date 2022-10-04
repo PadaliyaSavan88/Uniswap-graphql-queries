@@ -33,9 +33,7 @@ exports.callGraphQLQueryWithParams = async (query, tokenId) => {
                 id
                 name
                 symbol
-                totalLiquidity
                 totalSupply
-                tradeVolume
             }
         }`
         console.log(query)

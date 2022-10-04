@@ -4,7 +4,6 @@ exports = LiquidityForTopTenTokens = {
           id
           symbol
           name
-          totalLiquidity   
           totalSupply  
           tradeVolumeUSD
         }
@@ -24,9 +23,39 @@ exports = getTokenData ={
           id
           name
           symbol
-          totalLiquidity
           totalSupply
           tradeVolume
         }
       }`
+}
+
+exports = FetchPools = {
+  query: `{
+    pools {
+      id
+      liquidity
+      tick
+      token0 {
+        name
+        symbol
+        poolCount
+        feesUSD
+        totalSupply
+      }
+      token1 {
+        name
+        feesUSD
+        symbol
+        poolCount
+        totalSupply
+      }
+      ticks {
+        price0
+        price1
+        volumeToken0
+        volumeToken1
+        id
+      }
+    }
+  }`
 }
