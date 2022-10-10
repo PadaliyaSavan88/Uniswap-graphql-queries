@@ -23,9 +23,16 @@ exports.getTokenVolume = async function(request_data, response_data) {
     })
 }
 
-exports.fetchPools = async function(request_data, response_data) {
-    const response = await graph.callGraphQLQuery(FetchPools.query)
+exports.getPools = async function(request_data, response_data) {
+    const response = await graph.callGraphQLQuery(getPoolsOfTwoTokens.query)
     return response_data.json({
+        response
+    })
+}
+
+exports.getWETHPriceWithTokenDayData = async function(request_data, response_data) {
+    const response = await graph.callGraphQLQuery(getWETHPriceWithTokenDayData.query)
+    return  response_data.json({
         response
     })
 }

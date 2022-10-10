@@ -48,7 +48,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"tokenId\": \"0x2f34f846f57e5e31975fa29ffcceb4d84a441abb\"\n}",
+					"raw": "{\n    \"tokenId\": \"0x119fc7e1fac933aa3ae902f38c4a9e3f4636844e\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -63,6 +63,24 @@
 					"port": "8000",
 					"path": [
 						"getTokenVolume"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPools",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/getPools",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"getPools"
 					]
 				}
 			},
